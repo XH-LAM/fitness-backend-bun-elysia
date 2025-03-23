@@ -26,14 +26,6 @@ const instructorSchema = new Schema(
   }
 );
 
-// // Optional toJSON customization to hide sensitive fields (e.g., password, if needed)
-// instructorSchema.set('toJSON', {
-//   transform: (doc, ret) => {
-//     delete ret._id;  // Optionally remove the _id field
-//     return ret;  // Return the transformed object
-//   },
-// });
-
 // Define the Instructor interface
 export interface Instructor extends Document {
   name: string;

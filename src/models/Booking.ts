@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 
 // Define the booking schema
 const bookingSchema = new mongoose.Schema(

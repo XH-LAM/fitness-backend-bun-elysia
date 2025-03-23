@@ -1,9 +1,7 @@
 import { Context } from 'elysia';
 
-import { ContextWithUser } from '../domain/types/extends/ContextWithUser';
 import SuccessResponse from '../domain/types/generics/SuccessResponse';
-import LoggedInUser from '../domain/types/LoggedInUser';
-import type { Machine } from '../models/machine';
+import type { Machine } from '../models/Machine';
 import * as machineService from '../services/machine';
 
 export const create = async (context: Context): Promise<SuccessResponse<Machine>> => {
@@ -18,20 +16,20 @@ export const create = async (context: Context): Promise<SuccessResponse<Machine>
 };
 
 export const fetchAll = async () => {
-  const users = await machineService.fetchAll();
+  const machines = await machineService.fetchAll();
 
   return {
     message: 'Machines fetched successfully.',
-    data: users
+    data: machines
   };
 };
 
 export const fetchOne = async (context: Context) => {
   const { id } = context.params;
-  const user = await machineService.fetchById(id);
+  const machine = await machineService.fetchById(id);
 
   return {
     message: 'Machine fetched successfully.',
-    data: user
+    data: machine
   };
 };
