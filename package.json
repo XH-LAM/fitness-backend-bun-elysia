@@ -1,0 +1,44 @@
+{
+  "name": "bun-api-starter",
+  "version": "1.3.0",
+  "scripts": {
+    "test": "NODE_ENV=test bun test ./test/**.test.ts",
+    "dev": "bun run --watch src/app.ts",
+    "start": "bun run src/app.ts",
+    "pretty": "prettier --write \"**/*.{ts,js}\"",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.1.0",
+    "@elysiajs/jwt": "^1.1.0",
+    "@elysiajs/swagger": "^1.1.1",
+    "elysia": "^1.1.8",
+    "http-status-codes": "^2.3.0",
+    "mongoose": "^8.5.4",
+    "yoctocolors": "^2.1.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "bun-types": "^1.1.26",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^50.2.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sonarjs": "^2.0.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "module": "src/index.ts"
+}
